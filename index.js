@@ -18,12 +18,13 @@
 
 /* Notes.
 
-   Current implementation will not be able to resize well, there will be a massive remap overhead.
+   FIXED:Current implementation will not be able to resize well, there will be a massive remap overhead.
    Flex boxes would be nice, but I'm not sure they are cross-browser compliant enough.
 
 */
 
 
+//Keep in mind the first image will be the last array item.
 images = [
 
     { src: "img1", desc: "Hello how are you?", order: 0 },
@@ -215,29 +216,57 @@ images = [
     { src: "img7", desc: "Iu is doing well.", order: 0 },
     { src: "img8", desc: "Iam has a well.", order: 0 },
     { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 }
+    { src: "img10", order: 0 }
 
 ]
 
 
+function resetDeadman(){
+    //Only trigger a resize after the window has been adjusted.
+    //Stops stack overflows in browsers that send constant window resized events.
+    clearTimeout(deadmanswitch)
+    deadmanswitch = setTimeout(checkLayout, 100)
+}
+
+
+function checkLayout(){
+    //Make sure all items are large enough, according to the min-width variable
+    //and update layout if needed.
+
+    //Adjust size.
+    $(".collageitem").css({ width: 100/numbercolumns+"%" })
+    numbercolumns = 10
+
+    while ($(".collageitem").width() < minwidth || $(".collageitem").width() > maxwidth){
+        if (numbercolumns){  numbercolumns += ( ($(".collageitem").width() < minwidth) ? -1 : 1 )   }
+        else { 
+            console.log("Collage container too small to size items properly!\n Check your minwidth is set properly.");
+            break;
+        }
+
+        //Adjust size.
+        $(".collageitem").css({ width: 100/numbercolumns+"%" })
+        //Height is updated by the spacer.
+
+    }
+}
+
+
 function addImages(){
     
-    //Add row containers.
+    //Add items.
     for (var row = 0; row < rowstoadd; row++){
-
-        //Make a row container.
-        if (!images.length){ $.waypoints("destroy"); return; } //Nothing left, clean up.
-        collagerow = $("<div class='collagerow'></div><br />")
-        collagecontainer.append(collagerow)
-    
-        //Add items to the row.
+        
+        //Add items to the container.
         for (var index = 0; index < numbercolumns; index++){
             if (!images.length){ $.waypoints("destroy"); break; } //Nothing left, clean up.
     
             image = images.pop()
-            collagerow.append(
-                "<div class='collageitem' style='background-image: url(\"" + image.src + "\")'>" +
-                    "<p class='collagedescription'>" + image.desc + "</p>" +
+            collagecontainer.append(
+                "<div class='collageitem' style='background-image: url(\"" + image.src + "\")' " + (image.desc ? "desc" : "nodesc") + ">" +
+                    "<div class='inner'>" +
+                        "<p class='description'>" + (image.desc || "") + "</p>" +
+                    "</div>" +
                 "</div>"
             )
         }
@@ -253,19 +282,29 @@ function addImages(){
         offset: function(){ return $.waypoints('viewportHeight')-$(this).height()+$(".collageitem").height() }
     });
 
+    //Resize items.
+    checkLayout()
+
 }
 
 
 //Waypoint triggers when top of the element hits the top of the viewport, use offsets to bring this down.
 $(document).ready(function (){
 
-    numbercolumns = 5
+    numbercolumns = 7
     rowstoadd = 3 
     collagecontainer = $("#collagecontainer")
+    deadmanswitch = {}
+
+    //Minimum size before causing a layout shift.
+    minwidth = 200;
+    maxwidth = 300;
 
     collagecontainer.waypoint(function() {
         addImages()
     },{
-        offset: function(){ return $.waypoints('viewportHeight')-$(this).height()/2 }
+        offset: function(){ return $.waypoints('viewportHeight') }
     });        
+
+    $(window).resize(resetDeadman)
 })

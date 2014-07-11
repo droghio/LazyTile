@@ -4,9 +4,10 @@ body{
 }
 
 #collagecontainer{
+    overflow: auto;
     text-align: center;
-    background-color: black;
     min-height: 100px;
+    min-width: 200px; /*If this needs to go lower update the minwidth variable in the js.*/
 }
 
 .collagerow{
@@ -18,9 +19,6 @@ body{
 
 .collageitem{
     float: left;
-    padding: 5px;
-    margin: 2px;
-    height: 200px;
     width: 200px;
     color: white;
     background-color: #EEE;
@@ -30,17 +28,32 @@ body{
 }
 
 
-.collageitem > .collagedescription{
-    visibility: hidden; 
-    /*height: 100%;
+/*Ensures sqaure layout based on width.*/
+.collageitem > .inner{
+    padding-bottom: 100%;
+    overflow: hidden;
+    height: 0px;
     width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    pointer-events: ignore;*/
 }
 
 
-.collageitem:hover > .collagedescription{
+.collageitem[desc]:hover > .inner{
+    background-color: rgba(200, 100, 0, .5);
+}
+
+
+.collageitem[desc] > .inner > .description{
+    margin-bottom: 5%;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    bottom: 0px;
+    font-family: arial;
+    font-size: 20px;
+    color: white;
+    visibility: hidden;
+}
+
+.collageitem:hover > .inner > .description{
    visibility: visible;
 }
