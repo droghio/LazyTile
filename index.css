@@ -1,0 +1,43 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+#collagecontainer{
+    text-align: center;
+    background-color: black;
+}
+
+.collagerow{
+    overflow: auto;
+    display: inline-block;
+    margin: auto;
+    clear: both;
+}
+
+.collageitem{
+    float: left;
+    padding: 5px;
+    margin: 2px;
+    height: 100px;
+    width: 100px;
+    color: white;
+    background-color: pink;
+    position: relative;
+}
+
+
+.collageitem > .collagedescription{
+    visibility: hidden; 
+    /*height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: ignore;*/
+}
+
+
+.collageitem:hover > .collagedescription{
+   visibility: visible;
+}
