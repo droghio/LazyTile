@@ -6,6 +6,7 @@ body{
 #collagecontainer{
     text-align: center;
     background-color: black;
+    min-height: 100px;
 }
 
 .collagerow{
@@ -19,11 +20,13 @@ body{
     float: left;
     padding: 5px;
     margin: 2px;
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
     color: white;
-    background-color: pink;
+    background-color: #EEE;
+    transition: background 1s;
     position: relative;
+    background-size: cover;
 }
 
 
