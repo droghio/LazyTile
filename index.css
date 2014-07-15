@@ -7,7 +7,7 @@ body{
     overflow: auto;
     text-align: center;
     min-height: 100px;
-    min-width: 350px; /*If this needs to go lower update the minwidth variable in the js.*/
+    min-width: 400px; /*If this needs to go lower update the minwidth variable in the js.*/
 }
 
 .collagerow{
