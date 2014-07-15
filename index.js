@@ -227,15 +227,11 @@ function collageExpand(me){
     $(me).attr("onclick", "")
     $(me).attr("nohover", true) //Default css will now ignore hover events.
 
-    collagecontainer.css({height: "auto", overflow: "auto"})
 
+    collageloaded = true
+    collagecontainer.css({ overflow: "auto", height: "none"})
 
-
-    collagecontainer.waypoint(function() {
-        addImages()
-    },{
-        offset: function(){ return $.waypoints('viewportHeight') }
-    });
+    addImages()
 }
 
 
@@ -282,16 +278,20 @@ function checkLayout(){
 
     }
 
-     $(".collageitem").css({ width: 100/numbercolumns+"%" })
-     collagecontainer.height($(".collageitem").height())
+     $(".collageitem").css({ width: 100/numbercolumns+"%", display: "block" })
 
+     //Hide extra elements if we are not loaded.
+     if (!collageloaded){
+         $(".collageitem:gt(" + Number(numbercolumns-1) + ")").css({display: "none"})
+         collagecontainer.height($(".collageitem").height())
+     }
 }
 
 
-function addImages(once){
+function addImages(){
     
     //Add items.
-    for (var row = 0; row < rowstoadd; row++){
+    for (var row = 0; row < (Number(!collageloaded) || rowstoadd); row++){
         
         //Add items to the container.
         for (var index = 0; index < numbercolumns; index++){
@@ -305,14 +305,12 @@ function addImages(once){
                     "</div>" +
                 "</div>"
             )
+            numberitems++
         }
     
     }
 
-    //Resize items.
-    checkLayout()
-
-    if (!once){
+    if (collageloaded){
         //Waypoints does not seem to update its firing point when the element resizes, so we must do this manually.
         $.waypoints("destroy");
         
@@ -323,6 +321,10 @@ function addImages(once){
         });
 
     }
+
+    //Resize items.
+    checkLayout()
+
 }
 
 
@@ -330,9 +332,10 @@ function addImages(once){
 $(document).ready(function (){
 
     numbercolumns = 7
+    rowstoadd = 3
 
-    //Only temporary to load a few images.
-    rowstoadd = 1
+    collageloaded = false
+    numberitems = 0
 
     collagecontainer = $("#collagecontainer")
     deadmanswitch = {}
@@ -342,10 +345,7 @@ $(document).ready(function (){
     maxwidth = 300;
     
     //Add a few images.
-    addImages(true);
-
-    //Actual value.
-    rowstoadd = 3
+    addImages();
 
     //Auto scale images on window resize.
     //Makes sure images are within the specified sizes.
