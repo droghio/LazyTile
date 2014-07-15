@@ -282,7 +282,7 @@ function checkLayout(){
 
      //Hide extra elements if we are not loaded.
      if (!collageloaded){
-         $(".collageitem:gt(" + Number(numbercolumns-1) + ")").css({display: "none"})
+         //$(".collageitem:gt(" + Number(numbercolumns-1) + ")").css({display: "none"})
          collagecontainer.height($(".collageitem").height())
      }
 }
@@ -295,7 +295,7 @@ function addImages(){
         
         //Add items to the container.
         for (var index = 0; index < numbercolumns; index++){
-            if (!images.length){ $.waypoints("destroy"); return; } //Nothing left, clean up.
+            if (!images.length){ $.waypoints("destroy"); checkLayout(); return; } //Nothing left, clean up.
     
             image = images.pop()
             collagecontainer.append(
@@ -310,6 +310,9 @@ function addImages(){
     
     }
 
+    //Resize items.
+    checkLayout()
+
     if (collageloaded){
         //Waypoints does not seem to update its firing point when the element resizes, so we must do this manually.
         $.waypoints("destroy");
@@ -321,10 +324,7 @@ function addImages(){
         });
 
     }
-
-    //Resize items.
-    checkLayout()
-
+ 
 }
 
 
