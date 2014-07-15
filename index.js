@@ -234,11 +234,12 @@ function checkLayout(){
     //and update layout if needed.
 
     //Adjust size.
+    numbercolumns = numbercolumns || 10
     $(".collageitem").css({ width: 100/numbercolumns+"%" })
-    numbercolumns = 10
+    prevnumbercolumns = numbercolumns
 
     while ($(".collageitem").width() < minwidth || $(".collageitem").width() > maxwidth){
-        if (numbercolumns){  numbercolumns += ( ($(".collageitem").width() < minwidth) ? -1 : 1 )   }
+        if (numbercolumns){  numbercolumns += optimizationdir = ( ($(".collageitem").width() < minwidth) ? -1 : 1 )   }
         else { 
             console.log("Collage container too small to size items properly!\n Check your minwidth is set properly.");
             break;
@@ -248,7 +249,23 @@ function checkLayout(){
         $(".collageitem").css({ width: 100/numbercolumns+"%" })
         //Height is updated by the spacer.
 
+        //Checks if we are in an optimization trap (both maxwidth and minwidth cannot be satisfied).
+        //Adjusts such that minwidth is satisfied, but maxwidth is violated (items will be larger than maxwidth).
+        //To prevent this adjust the minimum contentainer size or your maxwidth and minwidth variables.
+
+        var toofew = $(".collageitem").width() > maxwidth
+        var toomany = $(".collageitem").width() < minwidth
+
+        //If we overshot (too many columns)...
+        if (optimizationdir == 1 && toomany){ numbercolumns--; return  $(".collageitem").css({ width: 100/numbercolumns+"%" }); break; }
+        else if (optimizationdir == -1 && toofew){ numbercolumns++; return  $(".collageitem").css({ width: 100/numbercolumns+"%" }); break; }
+
+        prevnumbercolumns = numbercolumns
+
     }
+
+     $(".collageitem").css({ width: 100/numbercolumns+"%" })
+
 }
 
 
@@ -259,7 +276,7 @@ function addImages(){
         
         //Add items to the container.
         for (var index = 0; index < numbercolumns; index++){
-            if (!images.length){ $.waypoints("destroy"); break; } //Nothing left, clean up.
+            if (!images.length){ $.waypoints("destroy"); return; } //Nothing left, clean up.
     
             image = images.pop()
             collagecontainer.append(
