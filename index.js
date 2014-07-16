@@ -25,200 +25,303 @@
 
 
 //Keep in mind the first image will be the last array item.
+/*images = [
+
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", desc: "I do well fine.", order: 0 },
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", desc: "I do well fine.", order: 0 },
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", desc: "I do well fine.", order: 0 },
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", desc: "I do well fine.", order: 0 },
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", desc: "I do well fine.", order: 0 },
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", desc: "I do well fine.", order: 0 },
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", desc: "I do well fine.", order: 0 },
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", desc: "I do well fine.", order: 0 },
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", desc: "I do well fine.", order: 0 },
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", desc: "I do well fine.", order: 0 },
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", desc: "I do well fine.", order: 0 },
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", desc: "I do well fine.", order: 0 },
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", desc: "I do well fine.", order: 0 },
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", desc: "I do well fine.", order: 0 },
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", desc: "I do well fine.", order: 0 },
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", desc: "I do well fine.", order: 0 },
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", desc: "I do well fine.", order: 0 },
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", desc: "I do well fine.", order: 0 },
+    { src: "images/img1", desc: "Hello how are you?", order: 0 },
+    { src: "images/img2", desc: "I am doing well.", order: 0 },
+    { src: "images/img3", desc: "I'm doing well.", order: 0 },
+    { src: "images/img4", desc: "I'm ok, but not doing well.", order: 0 },
+    { src: "images/img5", desc: "I am doing welloff.", order: 0 },
+    { src: "images/img6", desc: "I am the well.", order: 0 },
+    { src: "images/img7", desc: "Iu is doing well.", order: 0 },
+    { src: "images/img8", desc: "Iam has a well.", order: 0 },
+    { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
+    { src: "images/img10", order: 0 }
+
+]*/
+
 images = [
-
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 },
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 },
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 },
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 },
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 },
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 },
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 },
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 },
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 },
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 },
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 },
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 },
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 },
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 },
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 },
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 },
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 },
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", desc: "I do well fine.", order: 0 },
-    { src: "img1", desc: "Hello how are you?", order: 0 },
-    { src: "img2", desc: "I am doing well.", order: 0 },
-    { src: "img3", desc: "I'm doing well.", order: 0 },
-    { src: "img4", desc: "I'm ok, but not doing well.", order: 0 },
-    { src: "img5", desc: "I am doing welloff.", order: 0 },
-    { src: "img6", desc: "I am the well.", order: 0 },
-    { src: "img7", desc: "Iu is doing well.", order: 0 },
-    { src: "img8", desc: "Iam has a well.", order: 0 },
-    { src: "img9", desc: "I am well doing nicely.", order: 0 },
-    { src: "img10", order: 0 }
-
+    {"src": "/imagecollage/images/img2", "desc": "This is the second image."},
+    {"src": "/imagecollage/images/img1",
+    "desc": "This is now the world we live in as of late."
+    }, {
+        "src": "/imagecollage/images/image10.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image1.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image11.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image12.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image2.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image3.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image4.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image5.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image6.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image7.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image8.png",
+        "desc": ""
+    },
+    {"src": "/imagecollage/images/img1",
+    "desc": "This is now the world we live in as of late."
+    }, {
+        "src": "/imagecollage/images/image9.png",
+        "desc": ""
+    },
+    {
+        "src": "/imagecollage/images/image10.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image1.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image11.png",
+        "desc": ""
+    },
+    {"src": "/imagecollage/images/img1",
+    "desc": "This is now the world we live in as of late."
+    },
+    {
+        "src": "/imagecollage/images/image12.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image2.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image3.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image4.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image5.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image6.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image7.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image8.png",
+        "desc": ""
+    },
+    {"src": "/imagecollage/images/img2", "desc": "This is the second image."},
+    {
+        "src": "/imagecollage/images/image9.png",
+        "desc": ""
+    }
 ]
+
+
+function collageExpand(me){
+
+    //Clear the on click event.
+    $(me).attr("onclick", "")
+    $(me).attr("nohover", true) //Default css will now ignore hover events.
+
+    collageloaded = true
+    collagecontainer.css({ overflow: "hidden", height: "auto", cursor: "default"})
+    $(".click").remove()
+
+    addImages()
+}
 
 
 function resetDeadman(){
@@ -264,19 +367,24 @@ function checkLayout(){
 
     }
 
-     $(".collageitem").css({ width: 100/numbercolumns+"%" })
+     $(".collageitem").css({ width: 100/numbercolumns+"%", display: "block" })
 
+     //Hide extra elements if we are not loaded.
+     if (!collageloaded){
+         //$(".collageitem:gt(" + Number(numbercolumns-1) + ")").css({display: "none"})
+         collagecontainer.height($(".collageitem").height())
+     }
 }
 
 
 function addImages(){
     
     //Add items.
-    for (var row = 0; row < rowstoadd; row++){
+    for (var row = 0; row < (Number(!collageloaded) || rowstoadd); row++){
         
         //Add items to the container.
         for (var index = 0; index < numbercolumns; index++){
-            if (!images.length){ $.waypoints("destroy"); return; } //Nothing left, clean up.
+            if (!images.length){ $.waypoints("destroy"); checkLayout(); return; } //Nothing left, clean up.
     
             image = images.pop()
             collagecontainer.append(
@@ -286,22 +394,26 @@ function addImages(){
                     "</div>" +
                 "</div>"
             )
+            numberitems++
         }
     
     }
 
-
-   //Waypoints does not seem to update its firing point when the element resizes, so we must do this manually.
-   $.waypoints("destroy");
-    collagecontainer.waypoint(function() {
-        addImages()
-    },{
-        offset: function(){ return $.waypoints('viewportHeight')-$(this).height()+$(".collageitem").height() }
-    });
-
     //Resize items.
     checkLayout()
 
+    if (collageloaded){
+        //Waypoints does not seem to update its firing point when the element resizes, so we must do this manually.
+        $.waypoints("destroy");
+        
+        collagecontainer.waypoint(function() {
+            addImages()
+        },{
+            offset: function(){ return $.waypoints('viewportHeight')-$(this).height()+$(".collageitem").height() }
+        });
+
+    }
+ 
 }
 
 
@@ -309,19 +421,24 @@ function addImages(){
 $(document).ready(function (){
 
     numbercolumns = 7
-    rowstoadd = 3 
+    rowstoadd = 3
+
+    collageloaded = false
+    numberitems = 0
+
     collagecontainer = $("#collagecontainer")
     deadmanswitch = {}
 
     //Minimum size before causing a layout shift.
     minwidth = 200;
     maxwidth = 300;
+    
+    //Add a few images.
+    addImages();
 
-    collagecontainer.waypoint(function() {
-        addImages()
-    },{
-        offset: function(){ return $.waypoints('viewportHeight') }
-    });        
-
+    //Auto scale images on window resize.
+    //Makes sure images are within the specified sizes.
     $(window).resize(resetDeadman)
+    collagecontainer.css({overflow: "hidden"})
+
 })

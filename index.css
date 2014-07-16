@@ -4,10 +4,29 @@ body{
 }
 
 #collagecontainer{
-    overflow: auto;
+    overflow: auto; /*So it resizes for contained floating objects.*/
+    position: relative; /*For the click hover.*/
     text-align: center;
     min-height: 100px;
-    min-width: 350px; /*If this needs to go lower update the minwidth variable in the js.*/
+    min-width: 400px; /*If this needs to go lower update the minwidth variable in the js.*/
+    cursor: pointer;
+}
+
+.click{
+    background-color: rgba(200, 100, 0, 1);
+    position: absolute;
+    bottom: -25px;
+    z-index: 1;
+    transition: all 1s;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-family: arial;
+}
+
+#collagecontainer:hover > .click{
+    bottom: 0px;
 }
 
 .collagerow{
@@ -25,6 +44,14 @@ body{
     transition: background 1s;
     position: relative;
     background-size: cover;
+}
+
+/*Adds a 1px border around teh collage items.*/
+.collageitem{
+    background-color: beige;
+    background-size: calc(100% - 1px) calc(100% - 1px);
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 
