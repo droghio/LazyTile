@@ -31,7 +31,11 @@ node_modules
 *.swp
 
 #Image files and archives.
+<<<<<<< HEAD
 ./imagecollage
+=======
+imagecollage/images/*
+>>>>>>> dev
 *.png
 *.jpg
 *.zip
