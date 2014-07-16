@@ -29,3 +29,6 @@ node_modules
 
 #Vim Swap Files
 *.swp
+
+#Custom image file.
+./images/*
