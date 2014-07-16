@@ -25,7 +25,7 @@
 
 
 //Keep in mind the first image will be the last array item.
-images = [
+/*images = [
 
     { src: "images/img1", desc: "Hello how are you?", order: 0 },
     { src: "images/img2", desc: "I am doing well.", order: 0 },
@@ -218,6 +218,95 @@ images = [
     { src: "images/img9", desc: "I am well doing nicely.", order: 0 },
     { src: "images/img10", order: 0 }
 
+]*/
+
+images = [
+    {"src": "/imagecollage/images/img2", "desc": "This is the second image."},
+    {"src": "/imagecollage/images/img1",
+    "desc": "This is now the world we live in as of late."
+    }, {
+        "src": "/imagecollage/images/image10.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image1.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image11.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image12.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image2.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image3.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image4.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image5.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image6.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image7.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image8.png",
+        "desc": ""
+    },
+    {"src": "/imagecollage/images/img1",
+    "desc": "This is now the world we live in as of late."
+    }, {
+        "src": "/imagecollage/images/image9.png",
+        "desc": ""
+    },
+    {
+        "src": "/imagecollage/images/image10.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image1.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image11.png",
+        "desc": ""
+    },
+    {"src": "/imagecollage/images/img1",
+    "desc": "This is now the world we live in as of late."
+    },
+    {
+        "src": "/imagecollage/images/image12.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image2.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image3.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image4.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image5.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image6.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image7.png",
+        "desc": ""
+    }, {
+        "src": "/imagecollage/images/image8.png",
+        "desc": ""
+    },
+    {"src": "/imagecollage/images/img2", "desc": "This is the second image."},
+    {
+        "src": "/imagecollage/images/image9.png",
+        "desc": ""
+    }
 ]
 
 
@@ -227,9 +316,9 @@ function collageExpand(me){
     $(me).attr("onclick", "")
     $(me).attr("nohover", true) //Default css will now ignore hover events.
 
-
     collageloaded = true
-    collagecontainer.css({ overflow: "auto", height: "none"})
+    collagecontainer.css({ overflow: "hidden", height: "auto", cursor: "default"})
+    $(".click").remove()
 
     addImages()
 }
