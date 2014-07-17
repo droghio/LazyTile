@@ -1,0 +1,15 @@
+#! /bin/bash
+
+#Point this to where you downloaded Imagemagick.
+export MAGICK_HOME="$HOME/Downloads/ImageMagick-6.8.9"
+export PATH="$MAGICK_HOME/bin:$PATH"
+export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib/"
+
+#Use this to change the numbering.
+cnt=0;
+
+for i in $(ls *.jpg)
+do
+    eval "convert -define jpeg:size=400x400 $(pwd)/$i -thumbnail 370x370^ -gravity center -extent 370x370 $(pwd)/../cropped/images$cnt.jpg"
+    let cnt=($cnt+1);
+done
