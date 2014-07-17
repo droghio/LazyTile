@@ -44,5 +44,5 @@ it can be used to present a call to action button.
 
 ###DETAILS
 
-By default the widget will size elements so they fill the screen. You can set maxwidth and minwidth globals to have the code automatically
+By default the widget will size elements so they fill the screen. You can set `maxwidth` and `minwidth` globals to have the code automatically
 adjust the number of columns to match the provided values (units are pixels).
