@@ -236,7 +236,10 @@ function addImages(){
 $(document).ready(function (){
 
     //Stops browser from remembering scroll position.
+    //Apperantly there needs to be scroll bars for window.scrollTo() to work. This makes sure there always are.
+    $("body").append("<div class='hugespacer' style='height: 120vh; width: 120vw;'></div>")
     window.scrollTo(0, 0)
+    $(".hugespacer").remove()
 
     numbercolumns = 7
     rowstoadd = 3
@@ -258,6 +261,8 @@ $(document).ready(function (){
     //Auto scale images on window resize.
     //Makes sure images are within the specified sizes.
     $(window).resize(resetDeadman)
-    collagecontainer.css({overflow: "hidden"})
+    collagecontainer.css({ overflow: "hidden" })
+
+    $("#collagecontainer").css({ "margin-top": $.waypoints('viewportHeight')-$(".collageitem").height() })
 
 })

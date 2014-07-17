@@ -9,6 +9,7 @@ body{
     margin: 0px;
     padding: 0px;
     font: 22px "FranklinGothicURWCon-Med",arial,helvetica,sans-serif;
+    overflow-y: scroll;
 }
 
 
