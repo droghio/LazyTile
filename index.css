@@ -9,16 +9,24 @@ body{
     margin: 0px;
     padding: 0px;
     font: 22px "FranklinGothicURWCon-Med",arial,helvetica,sans-serif;
+    overflow-y: scroll;
 }
 
 
 #collagecontainer{
+    overflow-x: hidden;
+}
+
+
+#collageitemscontainer{
     overflow: auto; /*So it resizes for contained floating objects.*/
     position: relative; /*For the click hover.*/
     text-align: center;
     min-height: 100px;
     min-width: 400px; /*If this needs to go lower update the minwidth variable in the js.*/
     cursor: pointer;
+
+    width: calc(100% + 1px); /*Makes sure the right edge border is off the screen. There is no left border.*/
 }
 
 
@@ -43,7 +51,7 @@ body{
     font-size: 20px;
 }
 
-#collagecontainer:hover > .click{
+#collagecontainer:hover .click{
     bottom: 0px;
 }
 
@@ -66,19 +74,31 @@ body{
     background-size: cover;
 
     /*Adds a 1px border around the collage items.*/
+    /* 
+       It isn't really a border since that would interfere with the relative layout, so instead we shrink the background image
+       to reveal a small bit of the colored background behind it. We lock the background to the top left so we can have 1px borders.
+       (This would be the same as a .5px border on all elements, which would cause rendering glitches or bump items over by 1px either way.)
+     */
     background-color: beige;
     background-size: calc(100% - 1px) calc(100% - 1px);
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: left top;
 }
 
 
-/*Ensures sqaure layout based on width.*/
+/*Ensures square layout based on width.*/
 .collageitem > .inner{
-    padding-bottom: 100%;
+    
+    /*
+       Since we added a border and this element controls the height, we must shrink the padding by the size of the border and add it to a margin
+       The margin will not fill in the background color leaving the beige of the item visible, making it look like a border.
+    */
+
+    padding-bottom: calc(100% - 1px);
+    margin-bottom: 1px;
     overflow: hidden;
     height: 0px;
-    width: 100%;
+    width: calc(100% - 1px);
 }
 
 .collageitem[desc]:hover > .inner{
